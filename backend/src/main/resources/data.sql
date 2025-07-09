@@ -1,7 +1,7 @@
 -- DEPARTAMENTOS
-INSERT INTO departamento (nombre, colorVisual) VALUES ('Humanidades y Artes', '#FF5733');
-INSERT INTO departamento (nombre, colorVisual) VALUES ('Desarrollo Productivo Tecnologico', '#33FF57');
-INSERT INTO departamento (nombre, colorVisual) VALUES ('Salud Comunitaria', '#3357FF');
+INSERT INTO departamento (nombre, color_visual) VALUES ('Humanidades y Artes', '#FF5733');
+INSERT INTO departamento (nombre, color_visual) VALUES ('Desarrollo Productivo Tecnologico', '#33FF57');
+INSERT INTO departamento (nombre, color_visual) VALUES ('Salud Comunitaria', '#3357FF');
 
 -- USUARIOS
 INSERT INTO usuario (nombre, email, rol, departamento_id)
