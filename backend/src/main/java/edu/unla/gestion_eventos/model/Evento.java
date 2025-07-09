@@ -11,26 +11,39 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Evento {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String nombre;
-	private LocalDateTime fechaInicio;
-	private LocalDateTime fechaFin;
-	
-	@Enumerated(EnumType.STRING)
-	private EstadoEvento estado;
-	
-	@ManyToOne
-	private Usuario solicitante;
-	
-	@ManyToOne
-	private Espacio espacio;
-	
-	@ManyToMany
-	private List<Recurso> recursos;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+
+    private LocalDateTime fechaInicio;
+
+    private LocalDateTime fechaFin;
+
+    @Enumerated(EnumType.STRING)
+    private EstadoEvento estado;
+
+    @ManyToOne
+    private Usuario solicitante;
+
+    @ManyToOne
+    private Espacio espacio;
+
+    @ManyToMany
+    private List<Recurso> recursos;
 }
