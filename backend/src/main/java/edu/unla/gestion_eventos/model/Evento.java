@@ -12,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -50,5 +51,10 @@ public class Evento {
     private Departamento departamento;
 
     @ManyToMany
+    @JoinTable(
+        name = "evento_recursos",
+        joinColumns = @JoinColumn(name = "evento_id"),
+        inverseJoinColumns = @JoinColumn(name = "recursos_id")
+    )
     private List<Recurso> recursos;
 }
