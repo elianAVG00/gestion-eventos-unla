@@ -6,6 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
 
 import lombok.Data;
 
@@ -22,5 +25,7 @@ public class Usuario {
         @Enumerated(EnumType.STRING)
         private RolUsuario rol;
 
-        private String departamento;
+        @ManyToOne
+        @JoinColumn(name = "departamento_id")
+        private Departamento departamento;
 }
