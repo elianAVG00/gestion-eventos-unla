@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -43,6 +44,10 @@ public class Evento {
 
     @ManyToOne
     private Espacio espacio;
+
+    @ManyToOne
+    @JoinColumn(name = "departamento_id")
+    private Departamento departamento;
 
     @ManyToMany
     private List<Recurso> recursos;
